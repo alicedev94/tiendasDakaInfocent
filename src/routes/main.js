@@ -5,10 +5,16 @@ const {
   newUser,
   updateUser,
   deleteUser,
+  querySql,
 } = require("../controllers/main");
 
 router.get("/", async (req, res) => {
   const rta = await findAll();
+  res.json(rta);
+});
+
+router.get("/query", async (req, res) => {
+  const rta = await querySql();
   res.json(rta);
 });
 

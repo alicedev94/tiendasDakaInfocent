@@ -12,11 +12,14 @@ const newUser = async (data) => {
 };
 
 const updateUser = async (id, data) => {
-  const rta = await sequelize.models.Users.update({ name: data },{
-    where: {
-      id: id,
-    },
-  });
+  const rta = await sequelize.models.Users.update(
+    { name: data },
+    {
+      where: {
+        id: id,
+      },
+    }
+  );
   return rta;
 };
 
@@ -29,9 +32,16 @@ const deleteUser = async (id) => {
   return rta;
 };
 
+const querySql = async () => {
+  const [data] = await sequelize.query(`SELECT * FROM aq$_queue_tables`);
+  console.log(data);
+  return data;
+};
+
 module.exports = {
   findAll,
   newUser,
   deleteUser,
   updateUser,
+  querySql,
 };

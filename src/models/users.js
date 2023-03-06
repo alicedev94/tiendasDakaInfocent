@@ -1,6 +1,6 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 
-const table_name = "Users";
+const table_name = "new_table_oracle";
 
 const userSchema = {
   name: {
