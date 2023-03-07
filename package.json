@@ -1,5 +1,5 @@
 {
-  "name": "tiendasdakainfocentcomisiones",
+  "name": "tiendasdakainfocent",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alicedev94/tiendasDakaInfocentComisiones.git"
+    "url": "git+https://github.com/alicedev94/tiendasDakaInfocent.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alicedev94/tiendasDakaInfocentComisiones/issues"
+    "url": "https://github.com/alicedev94/tiendasDakaInfocent/issues"
   },
-  "homepage": "https://github.com/alicedev94/tiendasDakaInfocentComisiones#readme",
+  "homepage": "https://github.com/alicedev94/tiendasDakaInfocent#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
