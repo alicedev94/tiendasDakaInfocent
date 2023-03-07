@@ -1,5 +1,7 @@
 import "./styles/App.css";
 import { useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 function App() {
   const [name, setName] = useState("");
@@ -24,26 +26,11 @@ function App() {
       requestOptions
     );
     const data = await response.json();
-    console.log(data);
+    return data;
   };
 
   return (
-    <div className="App">
-      <p>view client from infocent</p>
-      <input
-        className="input"
-        placeholder="type a value"
-        onChange={onCaptureName}
-      />
-      <input
-        className="input"
-        placeholder="type a value"
-        onChange={onCaptureLastName}
-      />
-      <button
-      onClick={sendData}
-      >send request</button>
-    </div>
+   <div></div>
   );
 }
 
