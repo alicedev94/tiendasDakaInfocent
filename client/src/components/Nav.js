@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 function Nav() {
-  const darkTheme = createTheme({
+  const dakaTheme = createTheme({
     palette: {
       primary: {
         main: "#e91e63",
@@ -21,7 +21,7 @@ function Nav() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={dakaTheme}>
         <AppBar position="static">
           <Toolbar>
             <IconButton
