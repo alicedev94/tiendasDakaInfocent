@@ -1,8 +1,8 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 
-const table_name = "infocent_persons";
+const table_name = "INFOCENT_PERSONS";
 
-const personsSchema = {
+const personSchema = {
   nombre: {
     allowNull: true,
     type: DataTypes.STRING,
@@ -11,7 +11,11 @@ const personsSchema = {
     allowNull: true,
     type: DataTypes.STRING,
   },
-  cedula: {
+  tipoDeIdentificacion: {
+    allowNull: true,
+    type: DataTypes.STRING,
+  },
+  tipoDeIdentificacionValue: {
     allowNull: true,
     type: DataTypes.STRING,
   },
@@ -66,13 +70,15 @@ class Persons extends Model {
       sequelize,
       tableName: table_name,
       modelName: "infocentPersons",
-      timestamps: true,
+      timestamps: false,
+      createdAt: false,
+      updatedAt: false,
     };
   }
 }
 
 module.exports = {
   table_name,
-  personsSchema,
+  personSchema,
   Persons,
 };

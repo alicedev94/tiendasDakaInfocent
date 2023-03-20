@@ -1,5 +1,4 @@
 const sequelize = require("../lib/sequelize");
-const { models } = require("../lib/sequelize");
 
 const registerPerson = async (data) => {
   const rta = await sequelize.models.infocentPersons.create(data);

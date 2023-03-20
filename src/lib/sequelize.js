@@ -9,10 +9,11 @@ const sequelize = new Sequelize(
   {
     dialect: process.env.DB_ENGINE,
     host: process.env.DB_SERVER,
+    port: process.env.DB_PORT,
   }
 );
 
 setupModels(sequelize);
-sequelize.sync();
+//sequelize.sync();
 
 module.exports = sequelize;

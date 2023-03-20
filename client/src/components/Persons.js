@@ -11,7 +11,8 @@ function Persons() {
   const [dataPerson, setDataPerson] = useState({
     nombre: "",
     apellido: "",
-    cedula: "",
+    tipoDeIdentificacion: "",
+    tipoDeIdentificacionValue: "",
     sexo: "",
     paisDeNacimiento: "",
     entidadFederal: "",
@@ -95,8 +96,6 @@ function Persons() {
       label: "Venezolano",
     },
   ];
-  // ------------------------
-
   const sendData = async () => {
     const res = await fetch(`http://localhost:5000/api/v1/registerPerson`, {
       method: "POST",
@@ -104,6 +103,7 @@ function Persons() {
       headers: { "Content-Type": "application/json" },
     });
   };
+
   const handlerChange = (event) => {
     setDataPerson({ ...dataPerson, [event.target.name]: event.target.value });
   };
@@ -138,19 +138,6 @@ function Persons() {
         <div>
           <TextField
             id="input-with-icon-textfield"
-            label=""
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
-            variant="standard"
-            onChange={handlerChange}
-          />
-        </div>
-        <div>
-          <TextField
-            id="input-with-icon-textfield"
             label="Apellido(s)*"
             name="apellido"
             InputProps={{
@@ -166,25 +153,13 @@ function Persons() {
         </div>
         <div>
           <TextField
-            id="input-with-icon-textfield"
-            label=""
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
-            variant="standard"
-            onChange={handlerChange}
-          />
-        </div>
-        <div>
-          <TextField
             id="standard-select-currency"
             select
             label="Tipo de Identificación"
-            name="cedula"
-            defaultValue="CI"
+            name="tipoDeIdentificacion"
+            defaultValue=" "
             variant="standard"
+            onChange={handlerChange}
           >
             {typeIdintification.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -197,6 +172,7 @@ function Persons() {
           <TextField
             id="input-with-icon-textfield"
             label=""
+            name="tipoDeIdentificacionValue"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start"></InputAdornment>
@@ -206,22 +182,22 @@ function Persons() {
             onChange={handlerChange}
           />
         </div>
-        <div>
-          <TextField
-            id="standard-select-currency"
-            select
-            label="Sexo"
-            name="sexo"
-            defaultValue="M"
-            variant="standard"
-          >
-            {sexo.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </div>
+        <TextField
+          id="standard-select-currency"
+          select
+          label="Sexo"
+          name="sexo"
+          defaultValue=" "
+          variant="standard"
+          onChange={handlerChange}
+        >
+          {sexo.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        <div></div>
       </div>
       <div className="colum-2">
         <div className="textField">
@@ -229,9 +205,10 @@ function Persons() {
             id="standard-select-currency"
             select
             label="País de Nacimiento"
-            name="pais_de_nacimiento"
-            defaultValue="VE"
+            name="paisDeNacimiento"
+            defaultValue=" "
             variant="standard"
+            onChange={handlerChange}
           >
             {country.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -244,12 +221,13 @@ function Persons() {
           <TextField
             id="standard-select-currency"
             select
-            label="Entidad Federal de Nacimiento"
-            name="entidad_federal"
-            defaultValue="CA"
+            label="Entidad Federal"
+            name="entidadFederal"
+            defaultValue=" "
             variant="standard"
+            onChange={handlerChange}
           >
-            {state.map((option) => (
+            {country.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
@@ -260,7 +238,7 @@ function Persons() {
           <TextField
             id="input-with-icon-textfield"
             label="Ciudad de nacimiento"
-            name="ciudad_de_nacimiento"
+            name="ciudadDeNacimiento"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start"></InputAdornment>
@@ -276,8 +254,9 @@ function Persons() {
             select
             label="Nacionalidad"
             name="nacionalidad"
-            defaultValue="ve"
+            defaultValue=" "
             variant="standard"
+            onChange={handlerChange}
           >
             {nationality.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -291,9 +270,10 @@ function Persons() {
             id="standard-select-currency"
             select
             label="Tipo de Sangre"
-            name="tipo_de_sangre"
-            defaultValue=""
+            name="tipoDeSangre"
+            defaultValue=" "
             variant="standard"
+            onChange={handlerChange}
           >
             {typeBlood.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -307,27 +287,12 @@ function Persons() {
             id="standard-select-currency"
             select
             label="Factor RH"
-            name="factor_rh"
-            defaultValue=""
+            name="factorRH"
+            defaultValue=" "
             variant="standard"
+            onChange={handlerChange}
           >
             {typeBlood.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </div>
-        <div>
-          <TextField
-            id="standard-select-currency"
-            select
-            label="País de residencia"
-            name=""
-            defaultValue="VE"
-            variant="standard"
-          >
-            {country.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>

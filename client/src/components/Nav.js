@@ -34,7 +34,7 @@ function Nav() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Prototype Infocent
+              NAME
             </Typography>
             <Button color="inherit">Iniciar sesion</Button>
           </Toolbar>
