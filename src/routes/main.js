@@ -7,6 +7,7 @@ const {
   deleteUser,
   querySql,
 } = require("../controllers/main");
+const { registerPerson } = require("../controllers/personsController");
 
 router.get("/", async (req, res) => {
   const rta = await findAll();
@@ -20,6 +21,11 @@ router.get("/query", async (req, res) => {
 
 router.post("/newUser", async (req, res) => {
   await newUser(req.body);
+  res.json(req.body);
+});
+
+router.post("/registerPerson", async (req, res) => {
+  await registerPerson(req.body);
   res.json(req.body);
 });
 

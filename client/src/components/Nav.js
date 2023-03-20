@@ -11,7 +11,7 @@ function Nav() {
   const dakaTheme = createTheme({
     palette: {
       primary: {
-        main: "#e91e63",
+        main: "#34495E",
       },
       secondary: {
         main: "#d500f9",
@@ -34,9 +34,9 @@ function Nav() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              News
+              Prototype Infocent
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit">Iniciar sesion</Button>
           </Toolbar>
         </AppBar>
       </ThemeProvider>
