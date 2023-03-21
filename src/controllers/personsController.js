@@ -5,6 +5,12 @@ const registerPerson = async (data) => {
   return rta;
 };
 
+const findAll = async () => {
+  const rta = await sequelize.models.infocentPersons.findAll();
+  return rta;
+};
+
 module.exports = {
   registerPerson,
+  findAll,
 };

@@ -2,7 +2,7 @@ const sequelize = require("../lib/sequelize");
 const { models } = require("../lib/sequelize");
 
 const findAll = async () => {
-  const rta = await sequelize.models.Users.findAll();
+  const rta = await models.infocentPersons.findAll();
   return rta;
 };
 
@@ -24,7 +24,7 @@ const updateUser = async (id, data) => {
 };
 
 const deleteUser = async (id) => {
-  const rta = await sequelize.models.Users.destroy({
+  const rta = await models.infocentPersons.destroy({
     where: {
       id: id,
     },

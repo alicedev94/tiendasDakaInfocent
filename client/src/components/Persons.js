@@ -7,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import "../styles/Persons.css";
 import { useState } from "react";
 
-function Persons() {
+export default function Persons() {
   const [dataPerson, setDataPerson] = useState({
     nombre: "",
     apellido: "",
@@ -61,17 +61,6 @@ function Persons() {
     {
       value: "VE",
       label: "Venezuela",
-    },
-  ];
-
-  const state = [
-    {
-      value: "CA",
-      label: "Carabobo",
-    },
-    {
-      value: "CC",
-      label: "Caracas",
     },
   ];
 
@@ -306,5 +295,3 @@ function Persons() {
     </Box>
   );
 }
-
-export default Persons;
