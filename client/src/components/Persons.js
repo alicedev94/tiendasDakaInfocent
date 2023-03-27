@@ -120,7 +120,9 @@ export default function Persons() {
                 </InputAdornment>
               ),
             }}
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           />
         </div>
@@ -136,7 +138,9 @@ export default function Persons() {
                 </InputAdornment>
               ),
             }}
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           />
         </div>
@@ -147,7 +151,9 @@ export default function Persons() {
             label="Tipo de Identificación"
             name="tipoDeIdentificacion"
             defaultValue=" "
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           >
             {typeIdintification.map((option) => (
@@ -167,7 +173,9 @@ export default function Persons() {
                 <InputAdornment position="start"></InputAdornment>
               ),
             }}
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           />
         </div>
@@ -177,7 +185,9 @@ export default function Persons() {
           label="Sexo"
           name="sexo"
           defaultValue=" "
-          variant="standard"
+          variant="filled"
+          color="success"
+          focused
           onChange={handlerChange}
         >
           {sexo.map((option) => (
@@ -196,7 +206,9 @@ export default function Persons() {
             label="País de Nacimiento"
             name="paisDeNacimiento"
             defaultValue=" "
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           >
             {country.map((option) => (
@@ -213,7 +225,9 @@ export default function Persons() {
             label="Entidad Federal"
             name="entidadFederal"
             defaultValue=" "
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           >
             {country.map((option) => (
@@ -233,7 +247,9 @@ export default function Persons() {
                 <InputAdornment position="start"></InputAdornment>
               ),
             }}
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           />
         </div>
@@ -244,7 +260,9 @@ export default function Persons() {
             label="Nacionalidad"
             name="nacionalidad"
             defaultValue=" "
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           >
             {nationality.map((option) => (
@@ -261,7 +279,9 @@ export default function Persons() {
             label="Tipo de Sangre"
             name="tipoDeSangre"
             defaultValue=" "
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           >
             {typeBlood.map((option) => (
@@ -278,7 +298,9 @@ export default function Persons() {
             label="Factor RH"
             name="factorRH"
             defaultValue=" "
-            variant="standard"
+            variant="filled"
+            color="success"
+            focused
             onChange={handlerChange}
           >
             {typeBlood.map((option) => (
@@ -288,8 +310,13 @@ export default function Persons() {
             ))}
           </TextField>
         </div>
-        <Button className="form-button" variant="outlined" onClick={sendData}>
-          Enviar
+        <Button
+          variant="contained"
+          color="success"
+          onClick={sendData}
+          style={{ marginLeft: ".5rem" }}
+        >
+          send data
         </Button>
       </div>
     </Box>

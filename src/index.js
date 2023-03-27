@@ -5,7 +5,6 @@
         -captura de errores.
         -update from client
         -consume static json 
-        -bulkload json in database
         -prepare project for deploy in productive
 */
 require("./app");

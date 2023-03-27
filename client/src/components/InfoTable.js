@@ -31,7 +31,7 @@ export default function Infotable() {
   function addRows() {
     navigate("/create");
   }
-  
+
   useEffect(() => {
     fetchData();
   }, []);
