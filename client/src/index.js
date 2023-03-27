@@ -1,10 +1,3 @@
-/* debug 
-  update and delete from client
-  consume static json 
-  bulkload json in database
-  prepare project for deploy in productive
-*/
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/index.css";
