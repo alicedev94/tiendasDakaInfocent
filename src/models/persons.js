@@ -5,7 +5,7 @@ const table_name = "INFOCENT_PERSONS";
 const personSchema = {
   nombre: {
     allowNull: true,
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
   },
   apellido: {
     allowNull: true,

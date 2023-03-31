@@ -33,7 +33,7 @@ const deleteUser = async (id) => {
 };
 
 const querySql = async () => {
-  const [data] = await sequelize.query(`SELECT * FROM aq$_queue_tables`);
+  const [data] = await sequelize.query(`SELECT * FROM ar_spi_err;`);
   console.log(data);
   return data;
 };

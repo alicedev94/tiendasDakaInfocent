@@ -1,0 +1,39 @@
+{
+  "nombreUno": "",
+  "segundoNombre": "",
+  "apellidoUno": "",
+  "apellidoDos": "APELLIDO2",
+  "idTipoIdentificacion": "ID",
+
+  "nacionalidad": "NACIONAL",
+  "numeroIdentificacion": "NUM_IDEN",
+  "pasaporte": "PASAPORTE",
+  "ciudadNacimiento": "CIUDAD_NA",
+  "idEntidadFederal": "ID_E",
+  "idPaisNacimiento": "ID_P",
+
+  "sexo": "S",
+  "edoCivil": "EDO_CIVIL",
+  "manoDominante": 1,
+  "tipoSangre": "TI",
+  "factorRh": "F",
+  "direccion": "DIRECCION",
+
+  "ciudad": "CIUDAD",
+  "idEntidadFederalResidencial": "ID_E",
+  "idPais": "ID_P",
+  "parroquia": "PARROQUIA",
+  "municipio": "MUNICIPIO",
+  "codPostal": "COD_POSTAL",
+
+  "telefono1": "TELEFONO1",
+  "telefono2": "TELEFONO2",
+  "fax": "FAX",
+  "celular": "CELULAR",
+  "emailUno": "E_MAIL1",
+  "emailDos": "E_MAIL2",
+
+  "inRelTrab": "I",
+  "usrcree": "USRCRE",
+  "usract": "USRACT"
+}

@@ -9,17 +9,43 @@ import { useState } from "react";
 
 export default function Persons() {
   const [dataPerson, setDataPerson] = useState({
-    nombre: "",
-    apellido: "",
-    tipoDeIdentificacion: "",
-    tipoDeIdentificacionValue: "",
-    sexo: "",
-    paisDeNacimiento: "",
-    entidadFederal: "",
-    ciudadDeNacimiento: "",
+    nombreUno: "",
+    segundoNombre: "",
+    apellidoUno: "",
+    apellidoDos: "",
+    idTipoIdentificacion: "",
+
     nacionalidad: "",
-    tipoDeSangre: "",
-    factorRH: "",
+    numeroIdentificacion: "-",
+    pasaporte: "-",
+    ciudadNacimiento: "-",
+    idEntidadFederal: "-",
+    idPaisNacimiento: "-",
+
+    sexo: "",
+    edoCivil: "",
+    manoDominante: 1,
+    tipoSangre: "",
+    factorRh: "",
+    direccion: "",
+
+    ciudad: "",
+    idEntidadFederalResidencial: "",
+    idPais: "",
+    parroquia: "",
+    municipio: "",
+    codPostal: "",
+
+    telefono1: "",
+    telefono2: "",
+    fax: "",
+    celular: "",
+    emailUno: "",
+    emailDos: "",
+
+    inRelTrab: "",
+    usrcree: "",
+    usract: "",
   });
 
   // persisistir los datos
@@ -86,7 +112,7 @@ export default function Persons() {
     },
   ];
   const sendData = async () => {
-    const res = await fetch(`http://localhost:5000/api/v1/registerPerson`, {
+    const res = await fetch(`http://localhost:5000/api/v1/nameNewLog`, {
       method: "POST",
       body: JSON.stringify(dataPerson),
       headers: { "Content-Type": "application/json" },
@@ -111,8 +137,8 @@ export default function Persons() {
         <div className="textField">
           <TextField
             id="input-with-icon-textfield"
-            label="Nombre(s)*"
-            name="nombre"
+            label="Primer Nombre"
+            name="nombreUno"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -129,13 +155,43 @@ export default function Persons() {
         <div>
           <TextField
             id="input-with-icon-textfield"
-            label="Apellido(s)*"
-            name="apellido"
+            label="Segundo Nombre"
+            name="segundoNombre"
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
-                  <AccountCircle />
-                </InputAdornment>
+                <InputAdornment position="start"></InputAdornment>
+              ),
+            }}
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Primer Apellido"
+            name="apellidoUno"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start"></InputAdornment>
+              ),
+            }}
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Segundo Apellido"
+            name="apellidoDos"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start"></InputAdornment>
               ),
             }}
             variant="filled"
@@ -149,7 +205,7 @@ export default function Persons() {
             id="standard-select-currency"
             select
             label="Tipo de Identificación"
-            name="tipoDeIdentificacion"
+            name="idTipoIdentificacion"
             defaultValue=" "
             variant="filled"
             color="success"
@@ -310,6 +366,120 @@ export default function Persons() {
             ))}
           </TextField>
         </div>
+      </div>
+      <div className="colum-2">
+        <div className="textField">
+          <TextField
+            id="standard-select-currency"
+            select
+            label="País de Nacimiento"
+            name="paisDeNacimiento"
+            defaultValue=" "
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          >
+            {country.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div>
+          <TextField
+            id="standard-select-currency"
+            select
+            label="Entidad Federal"
+            name="entidadFederal"
+            defaultValue=" "
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          >
+            {country.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Ciudad de nacimiento"
+            name="ciudadDeNacimiento"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start"></InputAdornment>
+              ),
+            }}
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="standard-select-currency"
+            select
+            label="Nacionalidad"
+            name="nacionalidad"
+            defaultValue=" "
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          >
+            {nationality.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div>
+          <TextField
+            id="standard-select-currency"
+            select
+            label="Tipo de Sangre"
+            name="tipoDeSangre"
+            defaultValue=" "
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          >
+            {typeBlood.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div>
+          <TextField
+            id="standard-select-currency"
+            select
+            label="Factor RH"
+            name="factorRH"
+            defaultValue=" "
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          >
+            {typeBlood.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+
         <Button
           variant="contained"
           color="success"
