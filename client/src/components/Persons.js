@@ -16,7 +16,7 @@ export default function Persons() {
     idTipoIdentificacion: "",
 
     nacionalidad: "",
-    numeroIdentificacion: "-",
+    numeroIdentificacion: "",
     pasaporte: "-",
     ciudadNacimiento: "-",
     idEntidadFederal: "-",
@@ -222,8 +222,8 @@ export default function Persons() {
         <div>
           <TextField
             id="input-with-icon-textfield"
-            label=""
-            name="tipoDeIdentificacionValue"
+            label="Número de Identifición"
+            name="numeroIdentificacion" 
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start"></InputAdornment>
