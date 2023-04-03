@@ -38,7 +38,6 @@ export default function Persons() {
     celular: "",
     emailUno: "",
     emailDos: "",
-    inRelTrab: "",
     inRelTrab: "0",
     usrcree: "NAME_DEFAULT_SYSTEM",
     usract: "NAME_DEFAULT_SYSTEM",

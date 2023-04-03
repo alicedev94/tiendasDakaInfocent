@@ -10,6 +10,15 @@ const nameNewLog = async (data) => {
   return rta;
 };
 
+const namePutLog = async (id, nombre) => {
+  const rta = await sequelize.models.modelNameEoPersonas.update({ nombreUno: nombre }, {
+    where: {
+      id: id
+    }
+  });
+  return rta;
+};
+
 const nameDestroyLog = async (id) => {
   const rta = await sequelize.models.modelNameEoPersonas.destroy({
     where: {
@@ -22,5 +31,6 @@ const nameDestroyLog = async (id) => {
 module.exports = {
   nameNewLog,
   nameGetLog,
+  namePutLog,
   nameDestroyLog,
 };

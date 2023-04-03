@@ -3,7 +3,7 @@ const router = Router();
 const {
   querySql,
 } = require("../controllers/main");
-const { nameNewLog, nameGetLog, nameDestroyLog} = require("../controllers/eoPersonaController");
+const { nameNewLog, nameGetLog, namePutLog, nameDestroyLog} = require("../controllers/eoPersonaController");
 
 // GET
 router.get("/query", async (req, res) => {
@@ -23,14 +23,13 @@ router.post("/nameNewLog", async (req, res) => {
 });
 
 // PUT
-/*
-router.put("/updateUser/:id", async (req, res) => {
-  const name = req.body.name;
+router.put("/namePutLog/:id", async (req, res) => {
+  const name = req.body.nombreUno;
   console.log(name);
-  await updateUser(req.params["id"], name);
+  await namePutLog(req.params["id"], name);
   res.json({ update_records: name });
 });
-*/
+
 
 // DELETE
 router.delete("/nameDestroyLog/:id", async (req, res) => {

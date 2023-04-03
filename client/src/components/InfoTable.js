@@ -6,10 +6,20 @@ export default function Infotable() {
   const [rows, setRows] = useState([]);
   const navigate = useNavigate();
 
+  const name = { nombreUno :  "edit03042023"};
+
   async function fetchData() {
     const res = await fetch(`http://localhost:5000/api/v1/nameGetLog`);
     const data = await res.json();
     setRows(data);
+  }
+
+  async function editRows(id) {
+    await fetch(`http://localhost:5000/api/v1/namePutLog/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(name),
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   async function deleteRows(id) {
