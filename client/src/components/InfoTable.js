@@ -7,21 +7,13 @@ export default function Infotable() {
   const navigate = useNavigate();
 
   async function fetchData() {
-    const res = await fetch(`http://localhost:5000/api/v1/`);
+    const res = await fetch(`http://localhost:5000/api/v1/nameGetLog`);
     const data = await res.json();
     setRows(data);
   }
 
-  async function editRows(id) {
-    const res = await fetch(`http://localhost:5000/api/v1/deleteUser/${id}`, {
-      method: "PUT",
-      body: JSON.stringify({ id: id }),
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
   async function deleteRows(id) {
-    const res = await fetch(`http://localhost:5000/api/v1/deleteUser/${id}`, {
+    await fetch(`http://localhost:5000/api/v1/nameDestroyLog/${id}`, {
       method: "DELETE",
       body: JSON.stringify({ id: id }),
       headers: { "Content-Type": "application/json" },
@@ -57,8 +49,8 @@ export default function Infotable() {
                 color: "black",
               }}
             >
-              <Typography>{row.nombre}</Typography>
-              <Typography>{row.apellido}</Typography>
+              <Typography>{row.direccion}</Typography>
+              <Typography>{row.feccre}</Typography>
             </div>
             <div>
               <Button

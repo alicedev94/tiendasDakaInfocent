@@ -10,7 +10,17 @@ const nameNewLog = async (data) => {
   return rta;
 };
 
+const nameDestroyLog = async (id) => {
+  const rta = await sequelize.models.modelNameEoPersonas.destroy({
+    where: {
+      id: id,
+    },
+  });
+  return rta;
+};
+
 module.exports = {
   nameNewLog,
   nameGetLog,
+  nameDestroyLog,
 };

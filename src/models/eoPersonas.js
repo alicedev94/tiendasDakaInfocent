@@ -89,12 +89,12 @@ const nameEoPersonasSchema = {
   tipoSangre: {
     field: "TIPO_SANGRE",
     allowNull: true,
-    type: DataTypes.STRING(2),
+    type: DataTypes.STRING(10), // 2
   },
   factorRh: {
     field: "FACTOR_RH",
     allowNull: true,
-    type: DataTypes.STRING(1),
+    type: DataTypes.STRING(10), // 1
   },
   direccion: {
     field: "DIRECCION",
@@ -109,7 +109,7 @@ const nameEoPersonasSchema = {
   idEntidadFederalResidencial: {
     field: "ID_ENTFE",
     allowNull: true,
-    type: DataTypes.STRING(4),
+    type: DataTypes.STRING(10), // 4
   },
   idPais: {
     field: "ID_PAIS",
@@ -154,12 +154,12 @@ const nameEoPersonasSchema = {
   emailUno: {
     field: "E_MAIL1",
     allowNull: true,
-    type: DataTypes.STRING(15),
+    type: DataTypes.STRING(25), // 15
   },
   emailDos: {
     field: "E_MAIL2",
     allowNull: true,
-    type: DataTypes.STRING(15),
+    type: DataTypes.STRING(25), // 15
   },
   inRelTrab: {
     field: "IN_REL_TRAB",
@@ -176,13 +176,23 @@ const nameEoPersonasSchema = {
     allowNull: true,
     type: DataTypes.STRING(60),
   },
-
+  feccre: {
+    field: "FECCRE",
+    allowNull: false,
+    type: DataTypes.DATE,
+    defaultValue: Sequelize.NOW,
+  },
   usract: {
     field: "USRACT",
     allowNull: true,
     type: DataTypes.STRING(60),
   },
-  
+  fecact: {
+    field: "FECACT",
+    allowNull: false,
+    type: DataTypes.DATE,
+    defaultValue: Sequelize.NOW,
+  },
   /*registro: {
     allowNull: true,
     type: DataTypes.DATE,

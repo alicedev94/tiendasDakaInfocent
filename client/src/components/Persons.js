@@ -14,38 +14,34 @@ export default function Persons() {
     apellidoUno: "",
     apellidoDos: "",
     idTipoIdentificacion: "",
-
     nacionalidad: "",
     numeroIdentificacion: "",
-    pasaporte: "-",
-    ciudadNacimiento: "-",
-    idEntidadFederal: "-",
-    idPaisNacimiento: "-",
-
+    pasaporte: "PorDeinir",
+    ciudadNacimiento: "",
+    idEntidadFederal: "",
+    idPaisNacimiento: "",
     sexo: "",
     edoCivil: "",
-    manoDominante: 1,
+    manoDominante: 1, // -
     tipoSangre: "",
     factorRh: "",
     direccion: "",
-
-    ciudad: "",
-    idEntidadFederalResidencial: "",
+    ciudad: "PorDefinir",
+    idEntidadFederalResidencial: "PorDefinir",
     idPais: "",
     parroquia: "",
     municipio: "",
     codPostal: "",
-
     telefono1: "",
     telefono2: "",
     fax: "",
     celular: "",
     emailUno: "",
     emailDos: "",
-
     inRelTrab: "",
-    usrcree: "",
-    usract: "",
+    inRelTrab: "0",
+    usrcree: "NAME_DEFAULT_SYSTEM",
+    usract: "NAME_DEFAULT_SYSTEM",
   });
 
   // persisistir los datos
@@ -112,7 +108,7 @@ export default function Persons() {
     },
   ];
   const sendData = async () => {
-    const res = await fetch(`http://localhost:5000/api/v1/nameNewLog`, {
+    await fetch(`http://localhost:5000/api/v1/nameNewLog`, {
       method: "POST",
       body: JSON.stringify(dataPerson),
       headers: { "Content-Type": "application/json" },
@@ -157,11 +153,6 @@ export default function Persons() {
             id="input-with-icon-textfield"
             label="Segundo Nombre"
             name="segundoNombre"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
             variant="filled"
             color="success"
             focused
@@ -223,7 +214,7 @@ export default function Persons() {
           <TextField
             id="input-with-icon-textfield"
             label="Número de Identifición"
-            name="numeroIdentificacion" 
+            name="numeroIdentificacion"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start"></InputAdornment>
@@ -257,10 +248,21 @@ export default function Persons() {
       <div className="colum-2">
         <div className="textField">
           <TextField
+            id="input-with-icon-textfield"
+            label="Estado Civil"
+            name="edoCivil"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
             id="standard-select-currency"
             select
             label="País de Nacimiento"
-            name="paisDeNacimiento"
+            name="idPaisNacimiento"
             defaultValue=" "
             variant="filled"
             color="success"
@@ -279,7 +281,7 @@ export default function Persons() {
             id="standard-select-currency"
             select
             label="Entidad Federal"
-            name="entidadFederal"
+            name="idEntidadFederal"
             defaultValue=" "
             variant="filled"
             color="success"
@@ -297,12 +299,7 @@ export default function Persons() {
           <TextField
             id="input-with-icon-textfield"
             label="Ciudad de nacimiento"
-            name="ciudadDeNacimiento"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
+            name="ciudadNacimiento"
             variant="filled"
             color="success"
             focused
@@ -333,7 +330,7 @@ export default function Persons() {
             id="standard-select-currency"
             select
             label="Tipo de Sangre"
-            name="tipoDeSangre"
+            name="tipoSangre"
             defaultValue=" "
             variant="filled"
             color="success"
@@ -352,7 +349,7 @@ export default function Persons() {
             id="standard-select-currency"
             select
             label="Factor RH"
-            name="factorRH"
+            name="factorRh"
             defaultValue=" "
             variant="filled"
             color="success"
@@ -367,55 +364,12 @@ export default function Persons() {
           </TextField>
         </div>
       </div>
-      <div className="colum-2">
+      <div className="colum-3">
         <div className="textField">
           <TextField
-            id="standard-select-currency"
-            select
-            label="País de Nacimiento"
-            name="paisDeNacimiento"
-            defaultValue=" "
-            variant="filled"
-            color="success"
-            focused
-            onChange={handlerChange}
-          >
-            {country.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </div>
-        <div>
-          <TextField
-            id="standard-select-currency"
-            select
-            label="Entidad Federal"
-            name="entidadFederal"
-            defaultValue=" "
-            variant="filled"
-            color="success"
-            focused
-            onChange={handlerChange}
-          >
-            {country.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </div>
-        <div>
-          <TextField
             id="input-with-icon-textfield"
-            label="Ciudad de nacimiento"
-            name="ciudadDeNacimiento"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start"></InputAdornment>
-              ),
-            }}
+            label="Direción"
+            name="direccion"
             variant="filled"
             color="success"
             focused
@@ -426,8 +380,8 @@ export default function Persons() {
           <TextField
             id="standard-select-currency"
             select
-            label="Nacionalidad"
-            name="nacionalidad"
+            label="País de Residencia"
+            name="idPais"
             defaultValue=" "
             variant="filled"
             color="success"
@@ -445,15 +399,15 @@ export default function Persons() {
           <TextField
             id="standard-select-currency"
             select
-            label="Tipo de Sangre"
-            name="tipoDeSangre"
+            label="Municipio"
+            name="municipio"
             defaultValue=" "
             variant="filled"
             color="success"
             focused
             onChange={handlerChange}
           >
-            {typeBlood.map((option) => (
+            {country.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
@@ -464,22 +418,100 @@ export default function Persons() {
           <TextField
             id="standard-select-currency"
             select
-            label="Factor RH"
-            name="factorRH"
+            label="Parroquia"
+            name="parroquia"
             defaultValue=" "
             variant="filled"
             color="success"
             focused
             onChange={handlerChange}
           >
-            {typeBlood.map((option) => (
+            {country.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
             ))}
           </TextField>
         </div>
-
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Código Postal"
+            name="codPostal"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Número de Teléfono"
+            name="telefono1"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Número Auxiliar"
+            name="telefono2"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+      </div>
+      <div className="colum-4">
+        <div className="textField">
+          <TextField
+            id="input-with-icon-textfield"
+            label="Fax"
+            name="fax"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Celular"
+            name="celular"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Correo Electrónico"
+            name="emailUno"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
+        <div>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Correo Auxiliar"
+            name="emailDos"
+            variant="filled"
+            color="success"
+            focused
+            onChange={handlerChange}
+          />
+        </div>
         <Button
           variant="contained"
           color="success"
