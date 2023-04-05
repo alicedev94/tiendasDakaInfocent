@@ -2,6 +2,8 @@ const { Router } = require("express");
 const router = Router();
 const {
   querySql,
+  query2Sql,
+
 } = require("../controllers/main");
 const { nameNewLog, nameGetLog, namePutLog, nameDestroyLog} = require("../controllers/eoPersonaController");
 
@@ -22,6 +24,11 @@ router.post("/nameNewLog", async (req, res) => {
   res.json(rta);
 });
 
+router.post("/taRelacionPuesto",  async (req, res) => {
+  const rta = await query2Sql(req.body);
+  res.json(rta);
+});
+
 // PUT
 router.put("/namePutLog/:id", async (req, res) => {
   const name = req.body.nombreUno;
@@ -29,7 +36,6 @@ router.put("/namePutLog/:id", async (req, res) => {
   await namePutLog(req.params["id"], name);
   res.json({ update_records: name });
 });
-
 
 // DELETE
 router.delete("/nameDestroyLog/:id", async (req, res) => {

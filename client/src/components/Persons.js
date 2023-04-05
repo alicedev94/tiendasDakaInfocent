@@ -106,8 +106,9 @@ export default function Persons() {
       label: "Venezolano",
     },
   ];
+  
   const sendData = async () => {
-    await fetch(`http://localhost:5000/api/v1/nameNewLog`, {
+    await fetch(`http://localhost:5000/api/v1/taRelacionPuesto`, {
       method: "POST",
       body: JSON.stringify(dataPerson),
       headers: { "Content-Type": "application/json" },
