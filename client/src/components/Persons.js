@@ -16,7 +16,7 @@ export default function Persons() {
     idTipoIdentificacion: "",
     nacionalidad: "",
     numeroIdentificacion: "",
-    pasaporte: "PorDeinir",
+    pasaporte: "PD",
     ciudadNacimiento: "",
     idEntidadFederal: "",
     idPaisNacimiento: "",

@@ -60,9 +60,9 @@ VALUES
     (
         null,
         '${body.nombreUno}',
-        null,
-        null,
-        null,
+        '${body.segundoNombre}',
+        '${body.apellidoUno}',
+        '${body.apellidoDos}',
         null,
         null,
         null,

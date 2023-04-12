@@ -6,6 +6,7 @@ const {
 
 } = require("../controllers/main");
 const { nameNewLog, nameGetLog, namePutLog, nameDestroyLog} = require("../controllers/eoPersonaController");
+const { apiKey } = require("../middlewares/auth");
 
 // GET
 router.get("/query", async (req, res) => {
