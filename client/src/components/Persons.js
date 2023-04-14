@@ -22,7 +22,7 @@ export default function Persons() {
     idPaisNacimiento: "",
     sexo: "",
     edoCivil: "",
-    manoDominante: 1, // -
+    manoDominante: 1, 
     tipoSangre: "",
     factorRh: "",
     direccion: "",
@@ -108,6 +108,8 @@ export default function Persons() {
   ];
   
   const sendData = async () => {
+    // Buscar el ultimo ID de la tabla EO_PERSONA
+
     await fetch(`http://localhost:5000/api/v1/taRelacionPuesto`, {
       method: "POST",
       body: JSON.stringify(dataPerson),

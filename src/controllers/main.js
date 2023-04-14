@@ -1,4 +1,5 @@
 const sequelize = require("../lib/sequelize");
+const { Sequelize } = require("sequelize");
 
 const querySql = async () => {
   const [data] = await sequelize.query(`SELECT * FROM ar_spi_err`);
@@ -58,7 +59,7 @@ const query2Sql = async (body) => {
 )
 VALUES
     (
-        null,
+        84195367, -- Ultimo id + 1
         '${body.nombreUno}',
         '${body.segundoNombre}',
         '${body.apellidoUno}',
@@ -66,44 +67,44 @@ VALUES
         '${body.idTipoIdentificacion}',
         '${body.nacionalidad}',
         '${body.numeroIdentificacion}',
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        '${body.pasaporte}', 
+        '250512',
+        '${body.ciudadNacimiento}',
+        '${body.idEntidadFederal}',
+        '${body.idPaisNacimiento}',
+        '${body.sexo}',
+        '${body.edoCivil}',
+        '${body.manoDominante}',
+        '${body.tipoSangre}',
+        'P',
+        '${body.direccion}',
+        '${body.ciudad}',
+        'SON4',
+        '${body.idPais}',
+        '${body.parroquia}',
+        '${body.municipio}',
+        '${body.codPostal}',
+        '${body.telefono1}',
+        '${body.telefono2}',
+        '${body.fax}',
+        '${body.celular}',
+        '${body.emailUno}',
+        '${body.emailDos}',
+        'u',
+        '${body.usrcree}',
+        '250512', -- FECHA CRE ---revisar 
+        null, -- USUARIO DE MODIFICACIÓN
+        '250512', -- FEACT
+        null, -- NOMBRE_FOTO
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
         null
     );`);
   return rta;
