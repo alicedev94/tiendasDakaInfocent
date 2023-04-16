@@ -34,7 +34,7 @@ function Nav() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              NAME
+              develoment mode
             </Typography>
             <Button color="inherit">Iniciar sesion</Button>
           </Toolbar>
